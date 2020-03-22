@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html la="en">
+<head>
+    <title>Bộ mã hóa ký tự</title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <script src="js/tab.js"></script>
+    <script src="js/caesar.js"></script>
+    <script src="js/vigenere.js"></script>
+    <script src="js/imagesloaded.min.js"></script>
+    <link rel="stylesheet" href="css/layout.css">
+    
+</head>
+<body>
+    <div class="header">
+        <h1>Bộ Chuyển Mã Hóa</h1>
+    </div>
+    <div class="tab">
+        <button class="tablinks" onclick="openkey(event, 'Caesar')" id="defaultOpen">Caesar</button>
+        <button class="tablinks" onclick="openkey(event, 'Vigenère')">Vigenère</button>
+        <button class="tablinks" onclick="openkey(event, 'Playfair')">Playfair</button>
+      </div>
+      
+      <div id="Caesar" class="tabcontent">
+        <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+        <h3>Caesar</h3>
+        <p>
+            <label>Plain text - Chuỗi chưa mã hóa:</label>
+            <br/>
+            <textarea id="plainTextCaeser" cols="30"></textarea>
+        </p>
+        <p>
+            <label>Cipher text - Chuỗi sau khi mã hóa: </label>
+            <br/>
+            <textarea id="cipherTextCaeser" cols="30"></textarea>
+        </p>
+        <p>
+            <label>Key K: </label>
+            <input title="Nhập một kí tự từ A-Z hoặc số từ 1-25" type="text" id="key" size="1" pattern="^[a-zA-Z0-9]{0,1}$">
+        </p>
+        <div id="errorMsg" class="error"></div>
+        <p>
+            <button type="button" onclick="btnEncryptCaeser()">Mã Hóa</button>
+            <button type="button" onclick="btnDecryptCaeser()">Giải Mã</button>
+        </p>
+        <section id="resultBruteforce"></section>
+      </div>
+      
+      <div id="Vigenère" class="tabcontent">
+        <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+        <h3>Vigenère</h3>
+        <p>
+            <label>Plain text - Chuỗi chưa mã hóa:</label>
+            <br/>
+            <textarea id="plainTextVigenere" cols="30"></textarea>
+        </p>
+        <p>
+            <label>Cipher text - Chuỗi sau khi mã hóa: </label>
+            <br/>
+            <textarea id="cipherTextVigenere" cols="30"></textarea>
+        </p>
+        <p>
+            <label>Key K: </label>
+            <input title="Nhập các kí tự từ A-Z" type="text" id="key" pattern="^[a-zA-Z]+">
+        </p>
+        <div id="errorMsgVigenere" class="error"></div>
+        <p>
+            <button type="button" onclick="btnEncryptVigenere()">Mã Hóa</button>
+            <button type="button" onclick="btnDecryptVigenere()">Giải Mã</button>
+        </p>
+      </div>
+      
+      <div id="Playfair" class="tabcontent">
+        <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+        <h3>Playfair</h3>
+        <p>Coming Soon</p>
+      </div>
+      <div class="footer">
+          <p>Web được thiết kế chỉnh sửa ngày 22/3/2020. Mọi chi tiết thắc mắc xinh vui lòng liên hệ:</p>
+          <a href="https://www.facebook.com/NgoctamZT" target="new"><img src="fb1.png"></a>
+      </div>
+    <!-- <div class="topnav">
+        <a href="a">Caesar</a>
+        <a href="b">Vigenère</a>
+        <a href="c">Playfair</a>
+    </div> -->
+</body>
+
+</html>
+
